@@ -1,14 +1,14 @@
 package classesobjects;
 
 public class Car {
-    String maker;
+     String maker;
     String model;
     boolean isAutomatic;
     short speed;
     static short count = 0;
 
     //constructor - initialize
-    Car(){
+    public Car(){
         maker = "";
         model = "";
         isAutomatic = false;
@@ -16,7 +16,7 @@ public class Car {
         count++;
     }
 
-    Car(String maker, String model, boolean isAutomatic, short speed){
+    public Car(String maker, String model, boolean isAutomatic, short speed){
         this.maker = maker;
         this.model =  model;
         this.isAutomatic = isAutomatic;
@@ -28,6 +28,7 @@ public class Car {
         System.out.println(maker);
         System.out.println(model);
         System.out.println(speed);
+        System.out.println(count);
     }
 
     static void displayCount(){
@@ -41,4 +42,14 @@ public class Car {
     void slowdown(short s){
         speed -= s;
     }
+
+    short getSpeed(){
+        return this.speed;
+    }
+
+    void setSpeed(short speed){
+        this.speed =  speed;
+    }
 }
+
+
