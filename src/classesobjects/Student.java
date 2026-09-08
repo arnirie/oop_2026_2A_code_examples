@@ -4,6 +4,9 @@
 
 package classesobjects;
 
+import java.sql.Array;
+import java.util.ArrayList;
+
 public class Student { //PascalCasing
     private String name;
     private int age;
@@ -80,4 +83,16 @@ o public static int getTotalStudents() → returns studentCount
         System.out.println("GPA: " + this.grade);
     }
 }
+
+class StudDemo{
+    static void main() {
+       //arraylist
+        ArrayList<Student> students = new ArrayList<Student>();
+        Student s = new Student();
+        s.setName("vianne");
+        students.add(s);
+        students.add(new Student("arlyn", 15, "001", 1.6));
+    }
+}
+
 
