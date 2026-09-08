@@ -6,6 +6,7 @@ package classesobjects;
 
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Student { //PascalCasing
     private String name;
@@ -82,16 +83,44 @@ o public static int getTotalStudents() → returns studentCount
         System.out.println("Student ID: " + this.studentId );
         System.out.println("GPA: " + this.grade);
     }
+
+    public void displayOneLine(){
+        System.out.printf("%s\t%d\t%s\t%.2f\n", this.name, this.age, this.studentId, this.grade);
+    }
 }
 
 class StudDemo{
     static void main() {
-       //arraylist
         ArrayList<Student> students = new ArrayList<Student>();
-        Student s = new Student();
-        s.setName("vianne");
-        students.add(s);
-        students.add(new Student("arlyn", 15, "001", 1.6));
+        //input
+        Scanner sc = new Scanner(System.in);
+        String choice;
+        while(true){
+            System.out.print("Do you want to add a new record?");
+            choice = sc.nextLine();
+            if(choice.equalsIgnoreCase("n")) break;
+            //input
+            Student s = new Student();
+            System.out.print("Enter name:");
+//                String name = sc.nextLine();
+//                s.setName(name);
+            s.setName(sc.nextLine());
+            System.out.print("Enter age:");
+            s.setAge(sc.nextInt());
+            sc.nextLine();
+            System.out.print("Enter ID:");
+            s.setStudentId(sc.nextLine());
+            System.out.print("Enter GPA:");
+            s.setGrade(sc.nextDouble());
+            sc.nextLine();
+            students.add(s);
+
+        }
+        //display
+        System.out.println("All Students:");
+        for(Student s : students){
+            s.displayOneLine();
+        }
     }
 }
 
