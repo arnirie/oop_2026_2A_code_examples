@@ -47,14 +47,4 @@ public class Book {
     }
 }
 
-void main(){
-    while(condition_false){
 
-    }
-    for(init, condition_false; va){
-
-    }
-    do{
-
-    }while(condition_false);
-}
