@@ -1,10 +1,7 @@
 package gui;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 public class LoginFrame extends JFrame{
     private JPanel mainPanel;
@@ -30,13 +27,59 @@ public class LoginFrame extends JFrame{
                 JOptionPane.showMessageDialog(mainPanel, tfUsername.getText() + "\n" + tfStudentID.getText() + "\n" + tfPassword.getText());
             }
         });
+//        btnReset.addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//                super.mouseClicked(e);
+//                tfUsername.setText("");
+//                tfStudentID.setText("");
+//                tfPassword.setText("");
+//            }
+//        });
         btnReset.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                tfUsername.setText("");
-                tfStudentID.setText("");
-                tfPassword.setText("");
+                IO.println("clicked");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                IO.println("pressed")  ;
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                super.mouseReleased(e);
+                IO.println("released");
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                IO.println("entered");
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+                IO.println("exited");
+            }
+
+            @Override
+            public void mouseWheelMoved(MouseWheelEvent e) {
+                super.mouseWheelMoved(e);
+            }
+
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                super.mouseDragged(e);
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                super.mouseMoved(e);
             }
         });
     }

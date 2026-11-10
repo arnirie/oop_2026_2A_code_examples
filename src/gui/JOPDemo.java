@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class JOPDemo {
 
     static void main() {
-        LoginFrame lframe = new LoginFrame();
+        JFrame lframe = new ComponentsFrame();
         lframe.setVisible(true);
 //        JFrame frame = new JFrame("Student Information System");
 //        frame.setSize(500, 300);
