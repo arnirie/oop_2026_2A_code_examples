@@ -8,8 +8,13 @@ import java.awt.event.ActionListener;
 public class JOPDemo {
 
     static void main() {
-        JFrame lframe = new ComponentsFrame();
+        JFrame lframe = new AnotherComponents();
         lframe.setVisible(true);
+
+
+
+
+
 //        JFrame frame = new JFrame("Student Information System");
 //        frame.setSize(500, 300);
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
