@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class JOPDemo {
 
     static void main() {
-        JFrame lframe = new AnotherComponents();
+        JFrame lframe = new ComponentsFrame();
         lframe.setVisible(true);
 
 

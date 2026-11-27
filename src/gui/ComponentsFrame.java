@@ -1,6 +1,8 @@
 package gui;
 
 import javax.swing.*;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.MaskFormatter;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Arrays;
@@ -25,11 +27,35 @@ public class ComponentsFrame extends  JFrame{
     private JComboBox cbFruits;
     private JList listFruits;
     private JButton button3;
+    private JSpinner spinner1;
+    private JSlider slider1;
+    private JProgressBar progressBar1;
+    private JTabbedPane tabbedPane1;
+    private JTextArea textArea1;
+    private JButton button4;
+    private JTextArea textArea2;
+    private JComboBox comboBox1;
+    private JFormattedTextField formattedTextField1;
+    private JCheckBox checkBox1;
+    private JButton button5;
+    private JButton button6;
+    private Timer timer;
+    private int progressValue;
 
     public ComponentsFrame() {
         setContentPane(mainPanel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
+        progressValue = 0;
+        spinner1.setModel(new SpinnerNumberModel(0, -200, 200, 10));
+        //formatted text
+        try {
+            //26-UR-1234 **-??-####
+            MaskFormatter phoneMask = new MaskFormatter("**-??@####");
+            formattedTextField1.setFormatterFactory(new DefaultFormatterFactory(phoneMask));
+        }catch(Exception ex){
+            //perform correction
+        }
         button1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -79,10 +105,23 @@ public class ComponentsFrame extends  JFrame{
                 //display label
             }
         });
+        timer = new Timer(100, e ->{
+            IO.println("timer ticks");
+            progressValue++;
+            progressBar1.setValue(progressValue);
+            if(progressValue >= 100){
+                timer.stop();
+            }
+        });
         button3.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                timer.start();
+//                spinner1.getValue()
+//                JOptionPane.showMessageDialog(button3, slider1.getValue());
+//                slider1.setValue(500);
+                progressBar1.setValue(60);
                 //combo
 //                IO.println(cbFruits.getSelectedItem());
                 for(Object o : listFruits.getSelectedValuesList()){
